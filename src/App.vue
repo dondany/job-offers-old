@@ -46,7 +46,7 @@ export default {
 button,
 .button {
   cursor: pointer;
-  padding: 16px 14px;
+  padding: 6px 6px;
   border-radius: 4px;
   border: none;
   font-size: 12px;
@@ -63,11 +63,20 @@ button,
   background-color: #8B9EF8;
 }
 
+.blue {
+  background-color: royalblue;
+}
+
+.gradient {
+  background: linear-gradient(90deg, rgba(119,163,217,1) 0%, rgba(139,158,248,1) 100%);
+}
+
 .container {
   width: 100%;
-  padding: 40px 10px;
+  padding: 40px 0px;
   max-width: 850px;
   margin: 0 auto;
+  padding: 0 auto;
 
   @media (min-width: 900px) {
     padding-top: 72px;

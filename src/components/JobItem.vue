@@ -17,12 +17,7 @@
         <button class="tag light-blue">Java</button>
         <button class="tag light-blue">Spring</button>
         <button class="tag light-blue">Hibernate</button>
-        <button class="tag light-blue">Java</button>
-        <button class="tag light-blue">Spring</button>
-        <button class="tag light-blue">Hibernate</button>
-        <button class="tag light-blue">Java</button>
-        <button class="tag light-blue">Spring</button>
-        <button class="tag light-blue">Hibernate</button>
+
       </div>
     </div>
   </div>
@@ -30,6 +25,7 @@
 
 <style lang="scss" scoped>
 .job-item {
+  max-width: 850px;
   text-decoration: none;
   cursor: pointer;
   gap: 16px;
@@ -41,6 +37,7 @@
   align-items: center;
   box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
   transition: all, .3s;
+  box-sizing: border-box;
 
   .left {
     align-items: center;
@@ -88,11 +85,11 @@
   &:hover {
     //   transform: translateY(-5px);
     //   box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.4);
-      padding: 50px;
+      padding: 40px;
   }
 
   &:active {
-      margin: 5px;
+      padding: 50px;
   }
 }
 
