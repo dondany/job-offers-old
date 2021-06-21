@@ -1,13 +1,14 @@
 <template>
   <div class="nav-bar flex">
     <div class="nav-bar-main flex">
-      <div class="left flex">About</div>
+      <div class="left flex">
+          <a href="#">About</a></div>
       <div class="middle flex">
         <div class="title">job-offers</div>
       </div>
       <div class="right flex">
         <div class="menu flex">
-          <button class="btn-new flex">
+          <button @click="newOffer" class="btn-new flex">
               <span>New</span>
          </button>
         </div>
@@ -15,6 +16,17 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  emits: ['newOffer'],
+  methods: {
+    newOffer() {
+      this.$emit('newOffer');
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .nav-bar {
@@ -29,12 +41,16 @@
 
   .nav-bar-main {
       width: 100%;
-      max-width: 850px;
+      padding: 20px;
     .left {
       flex: 1;
       justify-content: flex-start;
       align-items: center;
-      color: rgb(145, 142, 142);
+      
+      a {
+          text-decoration: none;
+          color: rgb(145, 142, 142);
+      }
     }
 
     .middle {

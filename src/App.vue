@@ -67,6 +67,10 @@ button,
   background-color: royalblue;
 }
 
+.red {
+  background-color: #E96487;
+}
+
 .gradient {
   background: linear-gradient(90deg, rgba(119,163,217,1) 0%, rgba(139,158,248,1) 100%);
 }

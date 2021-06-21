@@ -2,26 +2,33 @@
   <div class="job-item flex">
     <div class="left flex">
       <div class="job-details flex flex-column">
-        <div class="job-name">Senior Java Developer</div>
+        <div class="job-name">{{ jobOffer.name }}</div>
         <div class="company-details flex">
-          <div class="company-name">Google</div>
+          <div class="company-name">{{ jobOffer.companyName }}</div>
           <div class="company-location flex">
             <img src="@/assets/icons/map-marker-alt.svg" alt="" />
-            <span>Łódź, Poland</span>
+            <span>{{jobOffer.city}}, {{jobOffer.country}}</span>
           </div>
         </div>
       </div>
     </div>
     <div class="right flex flex-column">
       <div class="tag-items flex">
-        <button class="tag light-blue">Java</button>
-        <button class="tag light-blue">Spring</button>
-        <button class="tag light-blue">Hibernate</button>
-
+        <button v-for="(tag, index) in jobOffer.tags" :key="index" class="tag light-blue">{{ tag }}</button>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['jobOffer'],
+  data() {
+    return {
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .job-item {
@@ -74,7 +81,7 @@
   .right {
     gap: 5px;
     flex-basis: 40%;
-    align-items: center;
+    align-items: flex-start;
 
     .tag-items {
       gap: 2px;

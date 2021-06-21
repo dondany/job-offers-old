@@ -1,6 +1,7 @@
 <template>
   <div class="home container">
-    <nav-bar></nav-bar>
+    <nav-bar @new-offer="TOGGLE_JOB_OFFER_MODAL"></nav-bar>
+    <Modal v-if="showJobOfferModal"/>
     <div class="job-search flex">
       <div class="left flex">
         <div class="search-box">
@@ -9,23 +10,38 @@
       </div>
       <div class="right flex"></div>
     </div>
-    <job-item></job-item>
-    <job-item></job-item>
-    <job-item></job-item>
-    <job-item></job-item>
+    <job-item v-for="(jobOffer, index) in jobOffers" :key="index" :jobOffer="jobOffer"></job-item>
   </div>
 </template>
 
 <script>
 import JobItem from "../components/JobItem.vue";
 import NavBar from "../components/NavBar.vue";
+import Modal from '../components/Modal.vue'
+
+import { mapState, mapActions, mapMutations } from 'vuex';
 
 export default {
   name: "Home",
   components: {
     JobItem,
     NavBar,
+    Modal
   },
+  data() {
+    return {
+    }
+  },
+  created() {
+    this.GET_JOB_OFFERS();
+  },
+  methods: {
+    ...mapActions(['GET_JOB_OFFERS']),
+    ...mapMutations(['TOGGLE_JOB_OFFER_MODAL'])
+  },
+  computed: {
+    ...mapState(['jobOffers', 'showJobOfferModal']),
+  }
 };
 </script>
 
