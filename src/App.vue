@@ -1,13 +1,21 @@
 <template>
   <div class="app flex flex-column">
+    <nav-bar @new-offer="TOGGLE_JOB_OFFER_MODAL"></nav-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import NavBar from "./components/NavBar.vue";
+
+import { mapMutations } from 'vuex';
+
 export default {
   name: "App",
-  components: {},
+  components: {NavBar},
+  methods: {
+        ...mapMutations(['TOGGLE_JOB_OFFER_MODAL'])
+  }
 };
 </script>
 

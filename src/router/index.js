@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import JobOfferView from "../views/JobOfferView"
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/offer/:offerId",
+    name: "JobOffer",
+    component: JobOfferView
   }
 ];
 

@@ -1,6 +1,5 @@
 <template>
   <div class="home container">
-    <nav-bar @new-offer="TOGGLE_JOB_OFFER_MODAL"></nav-bar>
     <Modal v-if="showJobOfferModal"/>
     <div class="job-search flex">
       <div class="left flex">
@@ -16,16 +15,14 @@
 
 <script>
 import JobItem from "../components/JobItem.vue";
-import NavBar from "../components/NavBar.vue";
 import Modal from '../components/Modal.vue'
 
-import { mapState, mapActions, mapMutations } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: "Home",
   components: {
     JobItem,
-    NavBar,
     Modal
   },
   data() {
@@ -37,7 +34,6 @@ export default {
   },
   methods: {
     ...mapActions(['GET_JOB_OFFERS']),
-    ...mapMutations(['TOGGLE_JOB_OFFER_MODAL'])
   },
   computed: {
     ...mapState(['jobOffers', 'showJobOfferModal']),

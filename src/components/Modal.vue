@@ -148,10 +148,12 @@ export default {
 }
 .input {
   min-width: 0;
+  padding-left: 10px;
 }
 input {
   background-color: rgb(240, 240, 240);
   border: none;
+  border-radius: 3px;
   padding: 6px 4px;
 
   &:focus {

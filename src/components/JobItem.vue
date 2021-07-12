@@ -1,4 +1,5 @@
 <template>
+<router-link class ="job-item-wrap" :to="{ name: 'JobOffer', params: {offerId: jobOffer.id}}">
   <div class="job-item flex">
     <div class="left flex">
       <div class="job-details flex flex-column">
@@ -18,6 +19,7 @@
       </div>
     </div>
   </div>
+</router-link>
 </template>
 
 <script>
@@ -31,6 +33,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.job-item-wrap {
+  text-decoration: none;
+        cursor: pointer;
+}
+
 .job-item {
   max-width: 850px;
   text-decoration: none;
