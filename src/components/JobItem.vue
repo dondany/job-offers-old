@@ -6,10 +6,7 @@
         <div class="job-name">{{ jobOffer.name }}</div>
         <div class="company-details flex">
           <div class="company-name">{{ jobOffer.companyName }}</div>
-          <div class="company-location flex">
-            <img src="@/assets/icons/map-marker-alt.svg" alt="" />
-            <span>{{jobOffer.city}}, {{jobOffer.country}}</span>
-          </div>
+          <location-details :city="jobOffer.city" :country="jobOffer.country"/>
         </div>
       </div>
     </div>
@@ -23,8 +20,13 @@
 </template>
 
 <script>
+import LocationDetails from './LocationDetails.vue'
+
 export default {
   props: ['jobOffer'],
+  components: {
+    LocationDetails
+  },
   data() {
     return {
     }

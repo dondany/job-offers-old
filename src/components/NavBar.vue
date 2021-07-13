@@ -4,7 +4,9 @@
       <div class="left flex">
           <a href="#">About</a></div>
       <div class="middle flex">
-        <div class="title">job-offers</div>
+        <router-link class="home-link" :to="{ name: 'Home' }">
+          <div class="title">job-offers</div>
+        </router-link>
       </div>
       <div class="right flex">
         <div class="menu flex">
@@ -82,5 +84,9 @@ export default {
         }
     }
   }
+}
+
+.home-link {
+  text-decoration: none;
 }
 </style>
